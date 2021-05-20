@@ -1,0 +1,64 @@
+    slick js CDN
+    
+    //css
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    //js (js중 가장 마지막에 삽입)
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
+    //html
+    <div style="padding:300px 100px; background-color: skyblue;">
+	  	<div id="slider-div">
+		    <div>1</div>
+		    <div>2</div>
+		    <div>3</div>
+		    <div>4</div>
+		    <div>5</div>
+		    <div>6</div>
+		    <div>7</div>
+		    <div>8</div>
+		    <div>9</div>
+		    <div>10</div>
+	  	</div>
+	</div>
+  
+  //js
+  <script>
+    $(function(){
+      $('#slick-div).slick({
+          slide: div, //슬라이드 되어야할 마크업 태그 ex) div, li, ....
+          infinite: true, //무한반복 옵션 
+          slidesToShow: 3, //한 화면에 보여질 컨텐츠 갯수
+          slideToScroll: 1, //스크롤 한번에 움직일 컨텐츠 갯수
+          speed: 1000, //다음 버튼 누르고 다음 화면이 뜨는데 까지 걸리는 시간
+          arrows: true, //이동하는 화살표 표시 여부(true=기본값)
+          dots: true, //스크롤바 아래 점으로 페이지네이션 여부
+          autopaly: true, //자동 스크롤
+          autopalySpeed: 10000, //자동스크롤 시 다음으로 넘어가는데 걸리는 시간
+          pauseOnHover:true, //슬라이드 이동 시 마우스를 올리면 슬라이드 멈춤
+          vertical:true, //세로방향 슬라이드 옵션
+          prevArrow : "<button type='button' class='slick-prev'>Previous</button>",		// 이전 화살표 모양 설정
+				  nextArrow : "<button type='button' class='slick-next'>Next</button>",		// 다음 화살표 모양 설정
+          dotsClass : "slick-dots", 	//아래 나오는 페이지네이션(점) css class 지정
+				  draggable : true, 	//드래그 가능 여부 
+				
+				  responsive: [ // 반응형 웹 구현 옵션
+					      {  
+						breakpoint: 960, //화면 사이즈 960px
+						settings: {
+							//위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
+							slidesToShow:3 
+						} 
+					 },
+					{ 
+						breakpoint: 768, //화면 사이즈 768px
+						settings: {	
+							//위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
+							slidesToShow:2 
+						} 
+					}
+				]
+
+      });
+    });
+  </script>
+  
